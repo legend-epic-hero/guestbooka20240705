@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <!-- {{ form.as_p }}與下面table擇一，但下面外觀較漂亮 -->
+
+    <table>
+        {{ form.as_table}}
+    </table>
+    
+    <input type="submit" value="送出留言">
+
+</form>
+{% endblock %}
