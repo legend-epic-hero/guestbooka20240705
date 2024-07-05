@@ -9,10 +9,13 @@
         <li>
             {{ msg.created }} 
             <a href="{% url 'msg_read' msg.id %}">{{ msg.subject }}</a> {{ msg.user}}
-            <a href="{% url 'msg_delete' msg.id %}">刪除</a>
+            
+            {% if user.is_authenticated %}
+                <a href="{% url 'msg_delete' msg.id %}">刪除</a>
+            {% endif %}
         
         </li>  
         {% endfor %}
     </ul>
 
- {% endblock %}
+ {% endblock %} 
