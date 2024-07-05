@@ -10,6 +10,12 @@
         <a href="{% url 'login' %}">登入</a>
     {% else %}
         歡迎 {{ user.username }} !!
+        <!-- #<a href="{% url 'login' %}">登出</a> django5.0後已無法用GET進去 -->
+        <!-- #要用表單的form:post才可 -->
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="登出">
+        </form>
     {% endif %}
 
     <a href="{% url 'msg_list' %}">留言列表</a>

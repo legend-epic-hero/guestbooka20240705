@@ -7,7 +7,8 @@ urlpatterns = [
     #massage/1/, massage/2/, ...
     path('<int:pk>/', views.MassageRead.as_view(), name='msg_read'),
 
-    path('', views.MassageNew.as_view(), name='msg_new')
+    path('create/', views.MassageNew.as_view(), name='msg_create'),
 
-   
+    path('<int:pk>/delete/', views.MassageDelete.as_view(), name='msg_delete')
+
 ]

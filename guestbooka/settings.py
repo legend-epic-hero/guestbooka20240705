@@ -123,4 +123,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = '/massage/'
+#      預設導引到/acounts/profile
+LOGIN_REDIRECT_URL = 'msg_list'
+#後面亦可改成LOGIN_REDIRECT_URL = '/massage/' 只是若之後要改會較麻煩
+
+LOGOUT_REDIRECT_URL = 'msg_list'
